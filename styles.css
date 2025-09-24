@@ -267,3 +267,10 @@ header.menu-open .mobile-overlay{ opacity:1; visibility:visible; }
 @media (max-width: 480px){
   :root{ --header-h: 76px; }
 }
+/* Spotify embed */
+.spotify-card iframe{
+  width:100%;
+  min-height:360px;
+  border:none;
+  border-radius:12px;
+}
