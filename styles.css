@@ -297,6 +297,6 @@ footer .socials.icons .social-btn{
   background:#F8FAFC;
 }
 footer .socials.icons .social-btn img{
-  width:16px;                /* <- riduci icone */
-  height:16px;
+  width:32px;                /* <- riduci icone */
+  height:32px;
 }
