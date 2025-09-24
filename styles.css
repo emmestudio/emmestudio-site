@@ -1,15 +1,15 @@
-/* === EMME STUDIO • styles.css (full) === */
+/* === EMME STUDIO • styles.css (Light, Black & White) === */
 
-/* Palette A (Grafite scuro) */
+/* Palette */
 :root{
-  --bg:#0E1117;
-  --surface:#0B1016;
-  --ring:#1F2630;
-  --text:#E5E7EB;
-  --muted:#94A3B8;
-  --brand:#4F46E5;
-  --brand-2:#22D3EE;
-  --white:#fff;
+  --bg:#FFFFFF;            /* sfondo pagina */
+  --surface:#F8FAFC;       /* superfici (card, blocchi) */
+  --ring:#E5E7EB;          /* bordi/linee */
+  --text:#111827;          /* testo principale (quasi nero) */
+  --muted:#4B5563;         /* testo attenuato */
+  --brand:#111111;         /* bottoni primari (nero) */
+  --brand-2:#000000;       /* gradiente nero pieno */
+  --white:#ffffff;
 }
 
 /* Base */
@@ -19,22 +19,21 @@ body{
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial,sans-serif;
   background:var(--bg); color:var(--text);
 }
-a{color:var(--brand);text-decoration:none;transition:opacity .15s ease}
-a:hover{opacity:.9}
+a{color:#111827;text-decoration:none;transition:opacity .15s ease}
+a:hover{opacity:.8}
 img{max-width:100%;display:block}
 
-/* Layout helpers */
 .container{max-width:1200px;margin:0 auto;padding:0 20px}
 section{padding:56px 0;border-bottom:1px solid var(--ring)}
-.intro{max-width:900px;margin:0 auto;color:#cbd5e1}
+.intro{max-width:900px;margin:0 auto;color:var(--muted)}
 iframe{max-width:100%}
 
-/* Header / Navbar */
+/* Header / Navbar (bianca, testi neri) */
 header{
   position:sticky; top:0; z-index:10;
-  background:rgba(14,17,23,.55);
-  backdrop-filter:saturate(160%) blur(8px);
+  background:#fff;
   border-bottom:1px solid var(--ring);
+  box-shadow:0 2px 16px rgba(0,0,0,.06);
 }
 .nav{
   display:flex; align-items:center; justify-content:space-between;
@@ -42,43 +41,50 @@ header{
 }
 .brand{display:flex; gap:16px; align-items:center}
 .brand img{
-  height:160px; width:auto;
-  filter:drop-shadow(0 1px 6px rgba(0,0,0,.25));
+  height:180px; width:auto;
+  filter:drop-shadow(0 1px 6px rgba(0,0,0,.10));
 }
+.brand strong{ color:#111827; }
 .nav-links{display:flex; gap:16px; align-items:center; flex-wrap:wrap}
-.nav a{color:#cbd5e1}
-.nav a.active{color:#fff;font-weight:600}
+.nav a{ color:#111827; }
+.nav a.active{ color:#000; font-weight:700; }
 
-/* Buttons */
+/* Bottoni (neri) */
 .btn{
   padding:10px 16px; border-radius:10px; font-weight:600; color:var(--white);
   background:linear-gradient(90deg,var(--brand),var(--brand-2));
 }
+.btn:hover{ opacity:.95 }
 .btn-outline{
-  padding:10px 16px; border-radius:10px; color:#e5e7eb;
-  border:1px solid #374151; background:transparent;
+  padding:10px 16px; border-radius:10px;
+  color:#111827; border:1px solid #111827; background:transparent;
 }
+.btn-outline:hover{ background:#111827; color:#fff; }
 
-/* Hero */
+/* Hero (chiara) */
 .hero{
   min-height:72vh; display:grid; place-items:center; text-align:center;
-  background-size:cover; background-position:center;
   border-bottom:1px solid var(--ring);
+  background-size:cover; background-position:center;
+  /* Forza overlay chiaro su eventuale inline style scuro */
+  background-image:
+    linear-gradient(rgba(255,255,255,.60), rgba(255,255,255,.60)),
+    url('assets/hero_bg1.png') !important;
 }
 .hero h1{font-size:clamp(28px,4vw,48px);margin:0 0 12px}
-.hero p{margin:0 0 24px;color:#cbd5e1}
+.hero p{margin:0 0 24px;color:var(--muted)}
 .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 
-/* Content blocks */
+/* Card / Griglie */
 .cols-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
 .card{
   background:var(--surface); border:1px solid var(--ring);
   border-radius:16px; padding:18px;
 }
 
-/* Tables (Listino) */
+/* Tabelle (Listino) */
 .table{width:100%;border-collapse:separate;border-spacing:0 8px}
-.table th{text-align:left;color:#cbd5e1;font-weight:600;padding:8px}
+.table th{text-align:left;color:#374151;font-weight:600;padding:8px}
 .table td{padding:12px;background:var(--surface);border:1px solid var(--ring)}
 .table tr td:first-child{border-top-left-radius:12px;border-bottom-left-radius:12px}
 .table tr td:last-child{border-top-right-radius:12px;border-bottom-right-radius:12px}
@@ -88,15 +94,18 @@ header{
 .thumb{display:block;border-radius:14px;overflow:hidden;border:1px solid var(--ring)}
 .thumb img{width:100%;display:block}
 
-/* Badges */
+/* Badge grigio chiaro */
 .badge{
   display:inline-flex;gap:6px;align-items:center;
   padding:6px 10px;border-radius:999px;
-  background:rgba(79,70,229,.15);color:#E5E7EB;border:1px solid #384152
+  background:#F3F4F6; color:#111827; border:1px solid var(--ring);
 }
 
-/* Footer */
-footer{padding:36px 0;color:#9CA3AF;text-align:center}
+/* Footer chiaro */
+footer{
+  padding:36px 0; color:#6B7280; text-align:center;
+  background:#F9FAFB; border-top:1px solid var(--ring);
+}
 
 /* Responsive */
 @media (max-width: 768px){
@@ -106,23 +115,4 @@ footer{padding:36px 0;color:#9CA3AF;text-align:center}
   .nav{height:76px}
   .brand img{height:48px}
   .nav-links{gap:12px}
-}
-/* === Navbar bianca con testi neri === */
-header{
-  background:#fff;
-  border-bottom:1px solid #E5E7EB;
-  backdrop-filter:none;
-  box-shadow:0 2px 16px rgba(0,0,0,.06);
-}
-.nav{ height:88px; }
-
-.brand strong{ color:#111827; }       /* testo “EMME STUDIO” */
-.nav a{ color:#111827; }               /* link menu */
-.nav a:hover{ color:#000; opacity:1; }
-.nav a.active{ color:#000; font-weight:700; }
-
-/* Bottoni outline leggibili su fondo bianco */
-.btn-outline{
-  color:#111827;
-  border-color:#111827;
 }
