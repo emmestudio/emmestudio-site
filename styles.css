@@ -245,5 +245,5 @@ header.menu-open .mobile-overlay{ opacity:1; visibility:visible; }
 
 /* Spazio tra descrizione e griglia docenti */
 .teachers .intro{
-  margin: 24 40 28px;   /* aumenta/riduci a piacere (es. 24–40px) */
+  margin: 0 0 28px;   /* aumenta/riduci a piacere (es. 24–40px) */
 }
