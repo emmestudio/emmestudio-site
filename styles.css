@@ -163,3 +163,54 @@ summary::-webkit-details-marker { display: none; }
   display:block; padding:10px 12px; color:#111827;
 }
 .nav .menu .menu-panel a:hover{ background:#F3F4F6; }
+
+/* ===== Mobile menu (hamburger) ===== */
+
+/* Bottone hamburger (visibile solo su mobile) */
+.mobile-toggle{
+  display:none;
+  width:44px; height:44px; border:0; background:transparent;
+  background-image:url('assets/hamburger-black.svg');
+  background-repeat:no-repeat; background-position:center; background-size:24px 24px;
+  cursor:pointer; border-radius:10px;
+}
+header.menu-open .mobile-toggle{
+  background-image:url('assets/close-black.svg');
+}
+
+/* Drawer laterale */
+.mobile-drawer{
+  position:fixed; inset:0 auto 0 0; width:86%; max-width:320px; height:100vh;
+  background:#fff; color:#111827; transform:translateX(-100%);
+  transition:transform .25s ease; z-index:30; padding:16px 12px 24px;
+  border-right:1px solid var(--ring); box-shadow:0 10px 30px rgba(0,0,0,.12);
+  overflow-y:auto;
+}
+.mobile-drawer a{ display:block; padding:12px 10px; color:#111827; border-radius:8px; }
+.mobile-drawer a:hover{ background:#F3F4F6; }
+.mobile-drawer .mobile-sub{ margin-top:6px; }
+.mobile-drawer .mobile-sub > summary{
+  padding:12px 10px; border-radius:8px; cursor:pointer; list-style:none;
+}
+.mobile-drawer .mobile-sub > summary::-webkit-details-marker{ display:none; }
+.mobile-drawer .mobile-sub[open] > summary{ background:#F3F4F6; }
+.mobile-drawer .mobile-sub .sub{ padding-left:18px; }
+
+/* Overlay scuro dietro al drawer */
+.mobile-overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.35);
+  opacity:0; visibility:hidden; transition:opacity .25s ease, visibility .25s;
+  z-index:25;
+}
+
+/* Stato open */
+header.menu-open .mobile-drawer{ transform:translateX(0); }
+header.menu-open .mobile-overlay{ opacity:1; visibility:visible; }
+
+/* Responsive behavior */
+@media (max-width: 900px){
+  .mobile-toggle{ display:inline-block; }
+  .nav{ gap:10px; }
+  .brand{ margin-left:6px; }
+  .nav-links{ display:none; } /* nasconde la navbar desktop */
+}
