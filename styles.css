@@ -247,3 +247,23 @@ header.menu-open .mobile-overlay{ opacity:1; visibility:visible; }
 .teachers .intro{
   margin: 0 0 80px;   /* aumenta/riduci a piacere (es. 24–40px) */
 }
+/* Centra il contenuto della hero orizz./verticalmente */
+:root{ --header-h: 88px; }                   /* altezza header desktop */
+.hero{
+  min-height: calc(100vh - var(--header-h)); /* occupa il viewport meno l'header */
+  display: grid;
+  place-items: center;                        /* centra il .container */
+  text-align: center;
+}
+.hero > .container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;                                  /* spazio tra h1 e intro */
+}
+
+/* mobile: header un po' più basso */
+@media (max-width: 480px){
+  :root{ --header-h: 76px; }
+}
