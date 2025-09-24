@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="it"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Nome Docente 3 – EMME STUDIO</title>
+<meta name="description" content="Biografia e informazioni lezioni di Nome Docente 3 – EMME STUDIO."/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon-180.png"/>
+<meta property="og:image" content="assets/og-image-1200x630-logo-badge-smaller.png"/>
+<meta name="theme-color" content="#4F46E5"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"/>
+</head><body>
+<header data-nav="v2">
+  <div class="container nav">
+    <button class="mobile-toggle" aria-label="Apri menu"></button>
+    <a class="brand" href="index.html"><img src="assets/logo.png" alt="EMME STUDIO logo"/><strong>EMME STUDIO</strong></a>
+    <nav class="nav-links" aria-label="Navigazione principale">
+      <a href="index.html">Home</a><a href="servizi.html">Servizi</a><a href="listino.html">Listino</a><a href="portfolio.html">Portfolio</a><a href="contatti.html">Contatti</a><a href="privacy.html">Privacy</a>
+      <details class="menu"><summary class="btn">Prenota</summary><div class="menu-panel">
+        <a href="prenota.html">Sala Prove</a><a href="preventivo.html">Richiesta Preventivo</a><a href="lezioni.html">Iscrizione Lezioni</a>
+      </div></details>
+    </nav>
+  </div>
+  <nav class="mobile-drawer" aria-label="Menu mobile" aria-hidden="true">
+    <a href="index.html">Home</a><a href="servizi.html">Servizi</a><a href="listino.html">Listino</a><a href="portfolio.html">Portfolio</a><a href="contatti.html">Contatti</a><a href="privacy.html">Privacy</a>
+    <details class="mobile-sub"><summary>Prenota</summary>
+      <a class="sub" href="prenota.html">Sala Prove</a><a class="sub" href="preventivo.html">Richiesta Preventivo</a><a class="sub" href="lezioni.html">Iscrizione Lezioni</a>
+    </details>
+  </nav>
+  <div class="mobile-overlay" aria-hidden="true"></div>
+</header>
+
+<section class="hero" style="background-image:
+  linear-gradient(rgba(255,255,255,.60),rgba(255,255,255,.60)),
+  url('assets/teachers/docente3.jpg')">
+  <div class="container">
+    <h1>Nome Docente 3 — Pianoforte</h1>
+    <p class="intro">Classico e moderno, armonia e arrangiamento, preparazione esami.</p>
+  </div>
+</section>
+
+<main class="container">
+  <section>
+    <div class="card" style="display:grid;grid-template-columns:320px 1fr;gap:18px;align-items:start">
+      <img src="assets/teachers/docente3.jpg" alt="Nome Docente 3" style="width:100%;border-radius:12px;border:1px solid var(--ring);aspect-ratio:3/4;object-fit:cover">
+      <div>
+        <h2>Biografia</h2>
+        <p>Inserisci bio docente 3: conservatorio, ensemble, progetti, discografia, masterclass.</p>
+        <h2 style="margin-top:18px">Lezioni</h2>
+        <ul>
+          <li>Impostazione, tecnica, lettura a prima vista</li>
+          <li>Armonia funzionale e voicing</li>
+          <li>Improvisazione e accompagnamento</li>
+          <li>Preparazione audizioni ed esami</li>
+        </ul>
+        <div class="cta" style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="lezioni.html">Iscriviti alle lezioni</a>
+          <a class="btn-outline" href="mailto:emmestudio.mixinfo@gmail.com">Scrivi per info</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container" style="text-align:center;padding:36px 0">
+    © 2025 Marcello Lachina – EMME STUDIO · Via Carlo Pisacane 71, 93100 Caltanissetta ·
+    <a href="tel:+393515117303">Tel 351 511 7303</a> ·
+    <a href="https://wa.me/393515117303" target="_blank" rel="noopener">WhatsApp</a> ·
+    <a href="mailto:emmestudio.mixinfo@gmail.com">emmestudio.mixinfo@gmail.com</a> ·
+    <a href="privacy.html">Privacy & Cookie</a>
+  </div>
+</footer>
+
+<script>
+(function(){ document.querySelectorAll('header[data-nav="v2"]').forEach(function(h){
+  var btn=h.querySelector('.mobile-toggle'), overlay=h.querySelector('.mobile-overlay'), drawer=h.querySelector('.mobile-drawer');
+  function open(){h.classList.add('menu-open');document.documentElement.style.overflow='hidden';}
+  function close(){h.classList.remove('menu-open');document.documentElement.style.overflow='';}
+  if(btn)btn.addEventListener('click',()=>h.classList.contains('menu-open')?close():open());
+  if(overlay)overlay.addEventListener('click',close);
+  if(drawer)drawer.querySelectorAll('a, summary').forEach(el=>el.addEventListener('click',()=>setTimeout(close,100)));
+});})();
+</script>
+</body></html>
