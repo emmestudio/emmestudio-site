@@ -107,3 +107,22 @@ footer{padding:36px 0;color:#9CA3AF;text-align:center}
   .brand img{height:48px}
   .nav-links{gap:12px}
 }
+/* === Navbar bianca con testi neri === */
+header{
+  background:#fff;
+  border-bottom:1px solid #E5E7EB;
+  backdrop-filter:none;
+  box-shadow:0 2px 16px rgba(0,0,0,.06);
+}
+.nav{ height:88px; }
+
+.brand strong{ color:#111827; }       /* testo “EMME STUDIO” */
+.nav a{ color:#111827; }               /* link menu */
+.nav a:hover{ color:#000; opacity:1; }
+.nav a.active{ color:#000; font-weight:700; }
+
+/* Bottoni outline leggibili su fondo bianco */
+.btn-outline{
+  color:#111827;
+  border-color:#111827;
+}
