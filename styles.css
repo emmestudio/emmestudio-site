@@ -116,3 +116,30 @@ footer{
   .brand img{height:48px}
   .nav-links{gap:12px}
 }
+/* Navbar: menu "Prenota" a tendina */
+summary { list-style: none; cursor: pointer; }
+summary::-webkit-details-marker { display: none; }
+
+.nav .menu { position: relative; }
+.nav .menu .btn { display: inline-flex; align-items: center; gap: 8px; }
+.nav summary.btn { color: #fff; }        /* testo bianco nel bottone */
+.nav .menu[open] .btn { opacity: .95; }
+
+.nav .menu .menu-panel{
+  position: absolute; right: 0; top: calc(100% + 8px);
+  background: #fff; color: #111827; z-index: 20;
+  border: 1px solid var(--ring); border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+  min-width: 240px; padding: 8px;
+}
+
+.nav .menu .menu-panel a{
+  display: block; padding: 10px 12px; color: #111827;
+}
+.nav .menu .menu-panel a:hover{
+  background: #F3F4F6;
+}
+.nav .menu .menu-panel hr{
+  border: 0; height: 1px; background: var(--ring); margin: 8px 0;
+}
+
