@@ -122,7 +122,7 @@ summary::-webkit-details-marker { display: none; }
 
 .nav .menu { position: relative; }
 .nav .menu .btn { display: inline-flex; align-items: center; gap: 8px; }
-.nav summary.btn { color: #fff; }        /* testo bianco nel bottone */
+.nav summary.btn { color: #fc0505; }        /* testo bianco nel bottone */
 .nav .menu[open] .btn { opacity: .95; }
 
 .nav .menu .menu-panel{
@@ -147,7 +147,7 @@ summary { list-style: none; cursor: pointer; }
 summary::-webkit-details-marker { display: none; }
 
 .nav .menu { position: relative; }
-.nav summary.btn{ color:#fff; display:inline-flex; align-items:center; gap:8px; }
+.nav summary.btn{ color:#fc0505; display:inline-flex; align-items:center; gap:8px; }
 .nav .menu[open] .btn{ opacity:.95; }
 .nav summary.btn::after{ content:"▾"; font-size:12px; line-height:1; }
 
