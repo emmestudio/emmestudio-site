@@ -213,3 +213,33 @@ header.menu-open .mobile-overlay{ opacity:1; visibility:visible; }
   .brand{ margin-left:6px; }
   .nav-links{ display:none; } /* nasconde la navbar desktop */
 }
+/* ===== Docenti (grid di card con foto cliccabili) ===== */
+.teachers h2{ margin-bottom:6px; }
+.teacher-grid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap:16px;
+}
+@media (max-width: 1024px){ .teacher-grid{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px){ .teacher-grid{ grid-template-columns: 1fr; } }
+
+.teacher-card{
+  position:relative; display:block; border-radius:16px; overflow:hidden;
+  border:1px solid var(--ring);
+  aspect-ratio: 4/5; /* alto, verticale */
+  background:#EEE center/cover no-repeat;
+  transform: translateY(0); transition: transform .2s ease, box-shadow .2s ease;
+}
+.teacher-card::after{
+  content:""; position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,.00) 40%, rgba(0,0,0,.45) 100%);
+  transition: opacity .2s ease; opacity:.9;
+}
+.teacher-card span{
+  position:absolute; left:12px; bottom:12px;
+  color:#fff; font-weight:700; line-height:1.1;
+  background: rgba(0,0,0,.45);
+  padding:8px 10px; border-radius:10px; backdrop-filter: blur(2px);
+}
+.teacher-card:hover{ transform: translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.10); }
+
