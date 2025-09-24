@@ -278,3 +278,25 @@ header.menu-open .mobile-overlay{ opacity:1; visibility:visible; }
 #playlist .intro{
   margin: 0 auto 20px;   /* centrata ai lati + 20px sotto */
 }
+/* Footer: social piccoli e in riga */
+footer .socials{
+  display:flex;              /* forza il layout orizzontale */
+  gap:8px;
+  justify-content:center;    /* centrati sotto tel/whatsapp/email */
+  align-items:center;
+  flex-wrap:wrap;
+  margin-top:8px;
+}
+footer .socials.icons .social-btn{
+  display:inline-flex;
+  width:32px;                /* <- riduci dimensione bottone */
+  height:32px;
+  padding:4px;
+  border-radius:999px;
+  border:1px solid var(--ring);
+  background:#F8FAFC;
+}
+footer .socials.icons .social-btn img{
+  width:16px;                /* <- riduci icone */
+  height:16px;
+}
