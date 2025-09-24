@@ -14,7 +14,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-  <script>
+<body>
+<header>
+    <script>
 (function(){
   const header = document.querySelector('header');
   const btn    = document.querySelector('.mobile-toggle');
@@ -27,8 +29,6 @@
   document.querySelectorAll('.mobile-drawer a, .mobile-drawer summary').forEach(el=> el.addEventListener('click', ()=> setTimeout(close, 100)));
 })();
 </script>
-<body>
-<header>
   <div class="container nav">
     <button class="mobile-toggle" aria-label="Apri menu"></button>
 
