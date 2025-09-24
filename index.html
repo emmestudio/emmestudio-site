@@ -14,21 +14,64 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
+  <script>
+(function(){
+  const header = document.querySelector('header');
+  const btn    = document.querySelector('.mobile-toggle');
+  const overlay= document.querySelector('.mobile-overlay');
+  function open(){ header.classList.add('menu-open'); document.body.style.overflow='hidden'; }
+  function close(){ header.classList.remove('menu-open'); document.body.style.overflow=''; }
+  btn.addEventListener('click', ()=> header.classList.contains('menu-open') ? close() : open());
+  overlay.addEventListener('click', close);
+  // Chiudi quando clicchi un link del drawer
+  document.querySelectorAll('.mobile-drawer a, .mobile-drawer summary').forEach(el=> el.addEventListener('click', ()=> setTimeout(close, 100)));
+})();
+</script>
 <body>
 <header>
   <div class="container nav">
+    <button class="mobile-toggle" aria-label="Apri menu"></button>
+
     <div class="brand">
       <img src="assets/logo.png" alt="EMME STUDIO logo" />
       <strong>EMME STUDIO</strong>
     </div>
+
     <div class="nav-links">
       <a href="index.html" class="active">Home</a>
-      <a href="servizi.html" class="">Servizi</a>
-      <a href="listino.html" class="">Listino</a>
-      <a href="portfolio.html" class="">Portfolio</a>
-      <a href="prenota.html" class="btn ">Prenota</a>
+      <a href="servizi.html">Servizi</a>
+      <a href="listino.html">Listino</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contatti.html">Contatti</a>
+      <a href="privacy.html">Privacy</a>
+
+      <details class="menu">
+        <summary class="btn">Prenota</summary>
+        <div class="menu-panel">
+          <a href="prenota.html">Sala Prove</a>
+          <a href="preventivo.html">Richiesta Preventivo</a>
+          <a href="lezioni.html">Iscrizione Lezioni</a>
+        </div>
+      </details>
     </div>
   </div>
+
+  <nav class="mobile-drawer" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="servizi.html">Servizi</a>
+    <a href="listino.html">Listino</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contatti.html">Contatti</a>
+    <a href="privacy.html">Privacy</a>
+    <details class="mobile-sub">
+      <summary>Prenota</summary>
+      <a class="sub" href="prenota.html">Sala Prove</a>
+      <a class="sub" href="preventivo.html">Richiesta Preventivo</a>
+      <a class="sub" href="lezioni.html">Iscrizione Lezioni</a>
+    </details>
+  </nav>
+
+  <div class="mobile-overlay" aria-hidden="true"></div>
 </header>
 <section class="hero" style="background-image:linear-gradient(rgba(255,255,255,.60),rgba(255,255,255,.60))
 ,url('assets/hero_bg1.png')">
