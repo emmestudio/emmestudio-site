@@ -274,3 +274,7 @@ header.menu-open .mobile-overlay{ opacity:1; visibility:visible; }
   border:none;
   border-radius:12px;
 }
+/* Spazio tra descrizione e player Spotify */
+#playlist .intro{
+  margin: 0 auto 20px;   /* centrata ai lati + 20px sotto */
+}
