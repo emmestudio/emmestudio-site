@@ -42,7 +42,7 @@ header{
 }
 .brand{display:flex; gap:16px; align-items:center}
 .brand img{
-  height:64px; width:auto;
+  height:80px; width:auto;
   filter:drop-shadow(0 1px 6px rgba(0,0,0,.25));
 }
 .nav-links{display:flex; gap:16px; align-items:center; flex-wrap:wrap}
