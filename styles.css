@@ -498,3 +498,22 @@ footer .socials.icons .social-btn img{
 @media (min-width: 1400px){
   .page-home #promo-video .video-embed{ max-width:1280px; }
 }
+#portfolio-videos{ text-align:center; }
+#portfolio-videos .intro{ text-align:center; margin:0 auto 16px; }
+
+.video-strip{
+  display:flex; gap:16px;
+  overflow-x:auto; padding:8px 0 12px;
+  scroll-snap-type:x mandatory;
+}
+.video-card{ flex:0 0 1400px; scroll-snap-align:center; }
+.video-embed{
+  position:relative; width:100%;
+  border:1px solid var(--ring); border-radius:12px; overflow:hidden;
+}
+.video-embed::before{ content:""; display:block; padding-top:56.25%; }
+.video-embed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+
+@media (max-width:1500px){
+  .video-card{ flex-basis:min(1400px, 92vw); }
+}
