@@ -439,3 +439,18 @@ footer .socials.icons .social-btn img{
 .teacher-socials .social-btn img{
   width:100%; height:100%; object-fit:contain; display:block; /* PNG già rotondi */
 }
+/* Centro titolo "Seguimi" + icone social nelle pagine docente */
+.teacher-socials-block{
+  text-align:center;       /* centra il testo nel blocco */
+  margin-top:16px;
+}
+.teacher-socials-block h3{
+  margin:0 0 8px;          /* spazio sotto il titolo */
+  text-align:inherit;      /* eredita il center */
+}
+.teacher-socials{
+  display:flex;
+  justify-content:center;  /* centra le icone orizzontalmente */
+  gap:10px;
+  flex-wrap:wrap;
+}
