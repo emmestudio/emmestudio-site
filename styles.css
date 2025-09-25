@@ -474,3 +474,27 @@ footer .socials.icons .social-btn img{
   margin: 0 auto;                     /* centra il box del player */
   /* già responsive con le regole che ti ho dato prima */
 }
+/* Sezione video: centra tutto e aumenta la larghezza del player */
+.page-home #promo-video{
+  display:grid;               /* centra gli elementi figli orizzontalmente */
+  justify-items:center;
+  text-align:center;          /* centra H2 e p */
+}
+
+.page-home #promo-video h2,
+.page-home #promo-video .intro{
+  text-align:center !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+.page-home #promo-video .video-embed{
+  width:100%;
+  max-width:1400px;           /* ↑ ingrandisci il player (prova 1280/1400 se vuoi) */
+  margin:0 auto;              /* centrato */
+}
+
+/* opzionale: ancora più grande su schermi larghi */
+@media (min-width: 1400px){
+  .page-home #promo-video .video-embed{ max-width:1280px; }
+}
