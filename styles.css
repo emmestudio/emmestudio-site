@@ -336,3 +336,12 @@ footer .socials.icons .social-btn img{
   font-size:14px; line-height:1;    /* testo compatto accanto all’icona */
 }
 #social .socials{ justify-content: center !important; }
+/* Chi siamo: centra i 3 bottoni */
+#chi-siamo .teacher-grid{
+  display:flex; justify-content:center; gap:16px; flex-wrap:wrap; align-items:center;
+}
+#chi-siamo .teacher-card{
+  width:260px;                /* dà dimensione alla card */
+  flex:0 0 auto;
+  aspect-ratio:4/5;           /* già presente: ok */
+}
