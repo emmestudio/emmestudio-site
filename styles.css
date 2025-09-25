@@ -425,3 +425,17 @@ footer .socials.icons .social-btn img{
   gap: 12px;
   flex-wrap: wrap;
 }
+/* Social rotondi per pagine docente */
+.teacher-socials{
+  display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+  margin-top:12px;
+}
+.teacher-socials .social-btn{
+  width:40px; height:40px; padding:0; border:0; background:transparent;
+  display:inline-flex; align-items:center; justify-content:center; border-radius:50%;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.teacher-socials .social-btn:hover{ transform:translateY(-1px); box-shadow:0 8px 18px rgba(0,0,0,.08); }
+.teacher-socials .social-btn img{
+  width:100%; height:100%; object-fit:contain; display:block; /* PNG già rotondi */
+}
