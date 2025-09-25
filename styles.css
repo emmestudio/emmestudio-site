@@ -345,3 +345,22 @@ footer .socials.icons .social-btn img{
   flex:0 0 auto;
   aspect-ratio:4/5;           /* già presente: ok */
 }
+/* ---- Centra tutta la pagina Contatti ---- */
+.page-contatti main{ text-align:center; }
+
+/* assicura che i blocchi ereditino l'allineamento */
+.page-contatti h1,.page-contatti h2,.page-contatti h3,
+.page-contatti p,.page-contatti .intro,.page-contatti small,
+.page-contatti section,.page-contatti .card{ text-align:inherit; }
+
+/* centra gruppi orizzontali (bottoni, social, link) */
+.page-contatti .cta,
+.page-contatti .socials,
+.page-contatti .nav-links,
+.page-contatti .teacher-grid{ justify-content:center; }
+
+/* se usi card larghe, centralele nel container */
+.page-contatti .card{ margin-left:auto; margin-right:auto; }
+
+/* centra eventuali iframe (es. moduli) nel layout */
+.page-contatti iframe{ display:block; margin:0 auto; }
