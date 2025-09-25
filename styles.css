@@ -324,7 +324,7 @@ footer .socials.icons .social-btn img{
   display:inline-flex !important;
   align-items:center;
   gap:6px;
-  padding:4px 8px;                  /* più compatti */
+  padding:12px 24px;                  /* più compatti */
   border:0; background:transparent; /* niente bordi/sfondi: i PNG sono già tondi */
   text-decoration:none;
 }
