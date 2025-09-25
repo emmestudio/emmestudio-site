@@ -454,3 +454,23 @@ footer .socials.icons .social-btn img{
   gap:10px;
   flex-wrap:wrap;
 }
+/* YouTube responsive embed */
+.video-embed{
+  position:relative; width:100%; max-width:980px; margin:0 auto;
+  border:1px solid var(--ring); border-radius:12px; overflow:hidden;
+}
+.video-embed::before{ content:""; display:block; padding-top:56.25%; } /* 16:9 */
+.video-embed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+/* Sezione video in HOME: tutto centrato */
+#promo-video { 
+  text-align: center;                 /* centra h2 e p */
+}
+#promo-video .intro{
+  text-align: center !important;      /* forza il centro se altri stili prevalgono */
+  margin: 0 auto 16px !important;     /* centra il paragrafo e aggiunge spazio sotto */
+  max-width: 68ch;                    /* opzionale: larghezza comoda di lettura */
+}
+#promo-video .video-embed{
+  margin: 0 auto;                     /* centra il box del player */
+  /* già responsive con le regole che ti ho dato prima */
+}
