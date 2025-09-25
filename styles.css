@@ -374,3 +374,25 @@ footer .socials.icons .social-btn img{
   margin-right: auto;  /* resta centrata anche se ha larghezza max */
 }
 
+/* ---- Centra tutto il contenuto della HOME (index) ---- */
+.page-home .hero,
+.page-home main{ text-align:center; }
+
+/* ereditano il centraggio */
+.page-home h1,.page-home h2,.page-home h3,
+.page-home p,.page-home .intro,.page-home section,.page-home .card{ text-align:inherit; }
+
+/* gruppi di bottoni/link in HOME */
+.page-home main .nav-links{               /* il blocco "Vai ai moduli" */
+  display:flex; justify-content:center; gap:12px; flex-wrap:wrap;
+}
+.page-home .cta{                          /* righe di bottoni/contatti */
+  display:flex; justify-content:center; gap:12px; flex-wrap:wrap;
+}
+
+/* centra eventuali blocchi larghi */
+.page-home .card{ margin-left:auto; margin-right:auto; }
+
+/* iframe (sezione mappa): centrato come box */
+.page-home iframe{ display:block; margin:0 auto; }
+
