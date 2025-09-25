@@ -517,3 +517,38 @@ footer .socials.icons .social-btn img{
 @media (max-width:1500px){
   .video-card{ flex-basis:min(1400px, 92vw); }
 }
+/* --- Carousel video centrato (1400px) --- */
+#portfolio-videos{ text-align:center; }
+#portfolio-videos .intro{ text-align:center; margin:0 auto 16px; }
+
+.video-carousel{
+  position:relative; width:100%; max-width:1400px; margin:0 auto;
+  display:grid; justify-items:center;
+}
+.video-embed{
+  position:relative; width:100%;
+  border:1px solid var(--ring); border-radius:12px; overflow:hidden;
+}
+.video-embed::before{ content:""; display:block; padding-top:56.25%; } /* 16:9 */
+.video-embed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+
+.vc-arrow{
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:48px; height:48px; border-radius:50%;
+  background:rgba(255,255,255,.85); border:1px solid var(--ring);
+  display:flex; align-items:center; justify-content:center; cursor:pointer;
+  box-shadow:0 8px 20px rgba(0,0,0,.12); transition:background .15s ease, transform .15s ease;
+}
+.vc-arrow:hover{ background:#fff; transform:translateY(-50%) scale(1.04); }
+.vc-arrow.prev{ left:8px; }
+.vc-arrow.next{ right:8px; }
+
+.vc-dots{ display:flex; gap:8px; justify-content:center; margin-top:10px; }
+.vc-dots button{
+  width:8px; height:8px; border-radius:999px; border:0; background:#D1D5DB; cursor:pointer;
+}
+.vc-dots button.active{ background:#111827; }
+
+@media (max-width:640px){
+  .vc-arrow{ width:40px; height:40px; }
+}
