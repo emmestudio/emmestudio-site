@@ -364,3 +364,13 @@ footer .socials.icons .social-btn img{
 
 /* centra eventuali iframe (es. moduli) nel layout */
 .page-contatti iframe{ display:block; margin:0 auto; }
+/* Chi siamo: centra titolo e descrizione */
+#chi-siamo h2{ 
+  text-align: center !important;
+}
+#chi-siamo .intro{
+  text-align: center !important;
+  margin-left: auto; 
+  margin-right: auto;  /* resta centrata anche se ha larghezza max */
+}
+
