@@ -78,54 +78,40 @@
   </div>
   <p class="intro" style="margin-top:8px">Possiamo integrare player YouTube/Spotify: inviami i link e aggiorno la pagina.</p>
 </section>
-  <section id="portfolio-videos">
-  <h2>Le nostre produzioni</h2>
+ <section id="portfolio-videos">
+  <h2>Video</h2>
   <p class="intro">Selezione di videoclip, live session e promo.</p>
 
-  <div class="video-strip">
-    <div class="video-card">
-      <div class="video-embed">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/MjUPJkEIG00?modestbranding=1&rel=0&playsinline=1"
-          title="Video 1"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
-      </div>
+  <div class="video-carousel" aria-label="Galleria video">
+    <button class="vc-arrow prev" aria-label="Video precedente" type="button">
+      <!-- chevron left -->
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+
+    <div class="video-embed">
+      <iframe id="vc-frame"
+        src="https://www.youtube-nocookie.com/embed/MjUPJkEIG00?modestbranding=1&rel=0&playsinline=1"
+        title="Video 1"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
     </div>
 
-    <div class="video-card">
-      <div class="video-embed">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/IxdDHrxxUdY?modestbranding=1&rel=0&playsinline=1"
-          title="Video 2"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
-      </div>
-    </div>
+    <button class="vc-arrow next" aria-label="Video successivo" type="button">
+      <!-- chevron right -->
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 6l6 6-6 6"/>
+      </svg>
+    </button>
+  </div>
 
-    <div class="video-card">
-      <div class="video-embed">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/VwMSJPrZVqw?modestbranding=1&rel=0&playsinline=1"
-          title="Video 3"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
-      </div>
-    </div>
-
-    <div class="video-card">
-      <div class="video-embed">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/iKGQfPsqyNM?modestbranding=1&rel=0&playsinline=1"
-          title="Video 4"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
-      </div>
-    </div>
+  <div class="vc-dots" role="tablist" aria-label="Selezione video">
+    <button role="tab" aria-label="Video 1" data-i="0" class="active"></button>
+    <button role="tab" aria-label="Video 2" data-i="1"></button>
+    <button role="tab" aria-label="Video 3" data-i="2"></button>
+    <button role="tab" aria-label="Video 4" data-i="3"></button>
   </div>
 </section>
 
@@ -192,6 +178,37 @@
   });
 })();
 </script>
+<script>
+(function(){
+  const ids = ["MjUPJkEIG00","IxdDHrxxUdY","VwMSJPrZVqw","iKGQfPsqyNM"];
+  const base = id => `https://www.youtube-nocookie.com/embed/${id}?modestbranding=1&rel=0&playsinline=1`;
+  const wrap = document.querySelector('#portfolio-videos .video-carousel');
+  if(!wrap) return;
+
+  let i = 0;
+  const frame = document.getElementById('vc-frame');
+  const prev = wrap.querySelector('.prev');
+  const next = wrap.querySelector('.next');
+  const dots = Array.from(document.querySelectorAll('#portfolio-videos .vc-dots button'));
+
+  function show(n){
+    i = (n + ids.length) % ids.length;
+    frame.src = base(ids[i]);                // cambia video (ferma quello precedente)
+    dots.forEach((d,k)=>d.classList.toggle('active', k===i));
+  }
+
+  prev.addEventListener('click', ()=>show(i-1));
+  next.addEventListener('click', ()=>show(i+1));
+  dots.forEach((d,k)=>d.addEventListener('click', ()=>show(k)));
+
+  // tastiera: ← →
+  wrap.setAttribute('tabindex','0');
+  wrap.addEventListener('keydown', (e)=>{
+    if(e.key === 'ArrowLeft') show(i-1);
+    if(e.key === 'ArrowRight') show(i+1);
+  });
+})();
+</script>  
 </body>
 </html>
 
