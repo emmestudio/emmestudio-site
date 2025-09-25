@@ -329,7 +329,7 @@ footer .socials.icons .social-btn img{
   text-decoration:none;
 }
 #social .social-btn img{
-  width:16px; height:16px;          /* << dimensione icone */
+  width:45px; height:456px;          /* << dimensione icone */
   display:block; object-fit:contain;
 }
 #social .social-btn span{
