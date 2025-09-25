@@ -335,3 +335,4 @@ footer .socials.icons .social-btn img{
 #social .social-btn span{
   font-size:14px; line-height:1;    /* testo compatto accanto all’icona */
 }
+#social .socials{ justify-content: center !important; }
