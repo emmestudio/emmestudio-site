@@ -395,4 +395,33 @@ footer .socials.icons .social-btn img{
 
 /* iframe (sezione mappa): centrato come box */
 .page-home iframe{ display:block; margin:0 auto; }
+/* HOME: centra titoli, descrizioni e bottoni specifici */
+.page-home main > section > h2,
+.page-home #playlist h2,
+.page-home #home-map h2{
+  text-align: center !important;
+}
 
+.page-home main > section > p,
+.page-home #playlist .intro,
+.page-home #home-map .intro{
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* "Vai ai moduli" (bottoni) */
+.page-home main .nav-links{
+  display: flex !important;
+  justify-content: center !important;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* CTA (righe bottoni/contatti) */
+.page-home main .cta{
+  display: flex !important;
+  justify-content: center !important;
+  gap: 12px;
+  flex-wrap: wrap;
+}
